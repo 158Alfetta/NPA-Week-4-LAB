@@ -56,6 +56,24 @@ def setContent2(device, interface):
             'password':password
         }, interface)
 
+def defaultOriginate(device):
+
+    device_params = {
+            'device_type':'cisco_ios',
+            'ip':DICT_OF_DEVICE[device],
+            'username':username,
+            'password':password
+        }
+
+    ssh = netmiko.ConnectHandler(**device_params)
+    commands = [
+        "router ospf 1",
+        "default-information originate"
+    ]
+    result = ssh.send_config_set(commands)
+    print(result)
+    ssh.disconnect()
+
 
 # add network of ospf process id 1 
 # use in order --> setContent('HOSTNAME', 'NETWORK', 'WILDCARD', 'AREA')
@@ -87,10 +105,11 @@ setContent('R5', '172.20.177.9', '0.0.0.0', '0')
 
 #set passive interface 
 # use in order --> setContent2('HOSTNAME', 'INTERFACE')
-
-
 setContent2('R1', 'g0/0')
 setContent2('R2', 'g0/0')
 setContent2('R3', 'g0/0')
 setContent2('R4', 'g0/0')
 setContent2('R5', 'g0/0')
+
+#set Default-information originate
+defaultOriginate('R5')
