@@ -1,8 +1,7 @@
 # Network Programability 
 ### _Presented by UDOMEAK CHUMTHONGMA 60070120_
 
-Link Youtube: www.youtube.com/watch?v=2OfNUqU-VZs
-(์NOTE: ใน Video ผมลืมเทส ping ไปยัง www.google.com ครับ แต่สามารถทำได้ครับ)
+Link Youtube: https://youtu.be/v7JVfrrHJ40
 
 ## Files Description
 | Name | Description |
