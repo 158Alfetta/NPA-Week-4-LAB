@@ -26,7 +26,7 @@ def Config_ACL_SSH(device_params):
         "20 permit 172.31.177.0 0.0.0.15",
         "line vty 0 15",
         "transport input telnet ssh",
-        "access noSSH in",
+        "access noSSH in"
     ]
     result = ssh.send_config_set(commands)
     print(result)
